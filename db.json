@@ -1,0 +1,102 @@
+{
+    "students":[
+        {
+            "id": 1,
+            "name": "Krit",
+            "surname":"Tipnuan",
+            "image":"https://cdn.discordapp.com/attachments/850725114702069790/1121435879441956864/draw.png",
+            "course_list": [
+                { "course_id": 1, "course_name": "Dev1"},
+                { "course_id": 2, "course_name": "Dev2"}, 
+                { "course_id": 3, "course_name": "Dev3"}
+            ],
+            "teacher_id":1,
+            "comment":[]
+        },
+        {
+            "id": 2,
+            "name": "Krit2",
+            "surname":"Tipnuan2",
+            "image":"https://cdn.discordapp.com/attachments/850725114702069790/1121435879441956864/draw.png",
+            "course_list": [
+                { "course_id": 1, "course_name": "Dev1"},
+                { "course_id": 2, "course_name": "Dev2"}, 
+                { "course_id": 3, "course_name": "Dev3"}
+            ],
+            "teacher_id":1,
+            "comment":[]
+        },
+        {
+            "id": 3,
+            "name": "Krit3",
+            "surname":"Tipnuan3",
+            "image":"https://cdn.discordapp.com/attachments/850725114702069790/1121435879441956864/draw.png",
+            "course_list": [
+                { "course_id": 1, "course_name": "Dev1"},
+                { "course_id": 2, "course_name": "Dev2"}, 
+                { "course_id": 3, "course_name": "Dev3"}
+            ],
+            "teacher_id":2,
+            "comment":[]
+        },
+        {
+            "id": 4,
+            "name": "Krit4",
+            "surname":"Tipnuan4",
+            "image":"https://cdn.discordapp.com/attachments/850725114702069790/1121435879441956864/draw.png",
+            "course_list": [
+                { "course_id": 1, "course_name": "Dev1"},
+                { "course_id": 2, "course_name": "Dev2"}, 
+                { "course_id": 3, "course_name": "Dev3"}
+            ],
+            "teacher_id":2,
+            "comment":[]
+        },
+        {
+            "id": 5,
+            "name": "Krit5",
+            "surname":"Tipnuan5",
+            "image":"https://cdn.discordapp.com/attachments/850725114702069790/1121435879441956864/draw.png",
+            "course_list": [
+                { "course_id": 1, "course_name": "Dev1"},
+                { "course_id": 2, "course_name": "Dev2"}, 
+                { "course_id": 3, "course_name": "Dev3"}
+            ],
+            "teacher_id":3,
+            "comment":[]
+        },
+        {
+            "id": 6,
+            "name": "Krit6",
+            "surname":"Tipnuan6",
+            "image":"https://cdn.discordapp.com/attachments/850725114702069790/1121435879441956864/draw.png",
+            "course_list": [
+                { "course_id": 1, "course_name": "Dev1"},
+                { "course_id": 2, "course_name": "Dev2"}, 
+                { "course_id": 3, "course_name": "Dev3"}
+            ],
+            "teacher_id":3,
+            "comment":[]
+        }
+    ],
+    "teachers":[
+        {
+            "id":1,
+            "teacher_name":"Stone",
+            "teacher_surname":"Calico",
+            "taacher_img":"https://cdn.discordapp.com/attachments/850725114702069790/1114207350870524005/download20230502221258.png"
+        },
+        {
+            "id":2,
+            "teacher_name":"Stone2",
+            "teacher_surname":"Calico2",
+            "taacher_img":"https://cdn.discordapp.com/attachments/850725114702069790/1114207350870524005/download20230502221258.png"
+        },
+        {
+            "id":3,
+            "teacher_name":"Stone3",
+            "teacher_surname":"Calico3",
+            "taacher_img":"https://cdn.discordapp.com/attachments/850725114702069790/1114207350870524005/download20230502221258.png"
+        }
+    ]
+}
