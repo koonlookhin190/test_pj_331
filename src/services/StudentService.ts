@@ -7,5 +7,8 @@ export default {
     },
     getStudentByID(id: number): Promise<AxiosResponse<studentInfo>>{
         return apiClient.get<studentInfo>('students/' +id.toString())
-    }
+    },
+    getStudents(): Promise<AxiosResponse<studentInfo[]>>{
+        return apiClient.get<studentInfo[]>('/students')
+    },
   }

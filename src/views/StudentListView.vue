@@ -10,9 +10,14 @@ import { storeToRefs } from 'pinia'
 import { useStudentListStore } from '@/stores/student_list'
 const store_student_list = useStudentListStore()
 const student_list = storeToRefs(store_student_list).student_list
-
-
-
+const all_stuent: Ref<Array<studentInfo>> = ref([])
+const showForm = ref(false);
+const id = ref<number | null>(null);
+const name = ref<string>('');
+const surname = ref<string>('');
+const image = ref<string>('');
+const teacher_id = ref<number | null>(null);
+const course_list = ref<[]>(null);
 const totalStudent = ref<number>(0)
 const props = defineProps({
   page: {
@@ -28,8 +33,12 @@ const router = useRouter()
 // const students: Ref<Array<studentInfo>> = ref([])
 StudentService.getStudent(3, props.page).then((response: AxiosResponse<studentInfo[]>) => {
   store_student_list.setStudent_list(response.data)
-  console.log(store_student_list)
   totalStudent.value = response.headers['x-total-count']
+})
+StudentService.getStudents()
+.then((response: AxiosResponse<studentInfo[]>) => {
+  all_stuent.value = response.data
+  console.log(all_stuent.value)
 })
 onBeforeRouteUpdate((to, from, next) => {
   const toPage = Number(to.query.page)
@@ -38,7 +47,31 @@ onBeforeRouteUpdate((to, from, next) => {
     totalStudent.value = response.headers['x-total-count']
     next()
   })
+  StudentService.getStudents()
+.then((response: AxiosResponse<studentInfo[]>) => {
+  all_stuent.value = response.data
+  console.log(all_stuent.value)
 })
+})
+
+const addStudent = () => {
+  const newStudent = {
+    id: id.value,
+    name: name.value,
+    surname: surname.value,
+    image: image.value,
+    teacher_id: teacher_id.value,
+    course_list: course_list.value,
+  };
+  store_student_list.add_student(newStudent)
+  id.value = null;
+  name.value = '';
+  surname.value = '';
+  image.value = '';
+  teacher_id.value = null;
+  course_list.value = [];
+  showForm.value = false;
+};
 </script>
 
 <template>
@@ -61,6 +94,22 @@ onBeforeRouteUpdate((to, from, next) => {
         class="text-right ml-auto"
         >Next Page</RouterLink
       >
+    </div>
+     <button @click="showForm = true" class="add-student-btn">Add Student</button>
+    <div>
+       <form v-if="showForm" @submit.prevent="addStudent" class="student-form">
+      <label for="id">ID:</label>
+      <input v-model="id" type="number" id="id" required>
+      <label for="name">Name:</label>
+      <input v-model="name" type="text" id="name" required>
+      <label for="surname">Surname:</label>
+      <input v-model="surname" type="text" id="surname" required>
+      <label for="image">Image URL:</label>
+      <input v-model="image" type="text" id="image" required>
+      <label for="teacher_id">Teacher ID:</label>
+      <input v-model="teacher_id" type="number" id="teacher_id" required>
+      <button type="submit" class="submit-btn">Add Student</button>
+    </form>
     </div>
   </main>
 </template>

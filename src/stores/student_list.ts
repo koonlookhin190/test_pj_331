@@ -7,6 +7,11 @@ export const useStudentListStore = defineStore('student_list', {
     actions: {
         setStudent_list(student_list: studentInfo){
             this.student_list = student_list
-        }
+        },
+        add_student(newStudent: studentInfo) {
+            if (this.student_list) {
+                console.log(newStudent)
+            }
+        },
     }
 })

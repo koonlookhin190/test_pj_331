@@ -4,6 +4,7 @@ import StudentLayoutView from '../views/student/StudentLayoutView.vue'
 import { useStudentStore } from '@/stores/student'
 import StudentService from '@/services/StudentService'
 import StudentDetailView from '../views/student/StudentDetailView.vue'
+import TeacherListView from '../views/TeacherListView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -22,6 +23,11 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/teacher_list',
+      name: 'teacher-list',
+      component:TeacherListView
     },
     {
       path: "/student/:id",
